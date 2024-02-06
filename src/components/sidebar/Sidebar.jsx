@@ -28,7 +28,7 @@ export const Sidebar = () => {
         <Divider />
         {/* MENU */}
         <div className='flex-grow flex flex-col overflow-hidden'>
-          <ul className='flex-grow flex flex-col gap-2'>
+          <ul className='flex-grow flex flex-col gap-2 overflow-auto'>
             <Menu />
           </ul>
           <Divider />

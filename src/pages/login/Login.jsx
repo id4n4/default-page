@@ -12,8 +12,9 @@ export const Login = () => {
   return (
     <Card className='max-w-[30rem]'>
       <header>
-        <Metric className='text-center'>Inicio de Sesión</Metric>
+        <Metric className='text-center uppercase'>Inicio de Sesión</Metric>
       </header>
+      <br />
       <form className='m-auto w-3/4'>
         <section className='space-y-3'>
           <div>

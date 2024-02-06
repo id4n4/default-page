@@ -11,6 +11,7 @@ export const SignUp = () => {
       <header>
         <Metric className='text-center uppercase'>Registro</Metric>
       </header>
+      <br />
       <form className='m-auto w-3/4'>
         <section className='space-y-3'>
           <div>

@@ -25,11 +25,6 @@ export const navigation = [
         path: PATH_ROOT,
         type: typeOptionsMenu.item,
         name: 'Categorías'
-      },
-      {
-        path: PATH_ROOT,
-        type: typeOptionsMenu.item,
-        name: 'Detalle de la categoría'
       }
     ]
   },
