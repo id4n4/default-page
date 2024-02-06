@@ -9,7 +9,7 @@ export const Home = () => {
     navigate('/login')
   }
   return (
-    <div className='flex flex-col justify-center items-center h-full'>
+    <div className='flex flex-col md:justify-center items-center h-full'>
       <MainIcon />
       <Metric className='text-center font-bold'>Gestión Inteligente de proyectos</Metric>
       <section>

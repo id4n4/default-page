@@ -5,9 +5,9 @@ import { SidebarProvider } from '../context/sidebarProvider'
 export const MainLayout = () => {
   return (
     <SidebarProvider>
-      <section className='w-screen h-screen flex bg-customLight-background'>
+      <section className='w-screen h-screen flex bg-customLight-background overflow-hidden'>
         <Sidebar />
-        <main className='flex-grow p-5'>
+        <main className='flex-grow p-5 overflow-auto'>
           <Outlet />
         </main>
       </section>
