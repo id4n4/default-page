@@ -1,8 +1,11 @@
 import { BrowserRoutes } from './Routes/routes'
+import { AuthProvider } from './context/authProvider'
 
 function App () {
   return (
-    <BrowserRoutes />
+    <AuthProvider>
+      <BrowserRoutes />
+    </AuthProvider>
   )
 }
 
