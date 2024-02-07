@@ -36,7 +36,7 @@ export function AuthProvider ({ children }) {
       dispatch({ type: 'ERROR', payload: error.response?.data?.message })
       setTimeout(() => {
         logout()
-      }, 500)
+      }, 5000)
     }
   }
   const singUp = async (userData) => {
@@ -63,7 +63,7 @@ export function AuthProvider ({ children }) {
       })
       setTimeout(() => {
         dispatch({ type: 'LOGOUT' })
-      }, 10)
+      }, 5000)
     }
   }
   const checkingCredentials = async () => {

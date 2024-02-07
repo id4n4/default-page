@@ -7,7 +7,7 @@ export const SignUp = () => {
     navigate('/login')
   }
   return (
-    <Card className='max-w-[30rem]'>
+    <Card className='max-w-[30rem] animate-fade animate-duration-150 animate-ease-in'>
       <header>
         <Metric className='text-center uppercase'>Registro</Metric>
       </header>
