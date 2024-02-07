@@ -1,4 +1,4 @@
-import { PATH_CONFIG, PATH_LOGIN, PATH_ROOT } from '../constants/routePaths'
+import { PATH_CATEGORY, PATH_CONFIG, PATH_CONVOCATORY, PATH_IDEA, PATH_LOGIN, PATH_PROJECTS, PATH_THIRD_PARTIES } from '../constants/routePaths'
 
 import { GiClassicalKnowledge, GiLightBulb } from 'react-icons/gi'
 import { PiProjectorScreenChartFill } from 'react-icons/pi'
@@ -11,57 +11,53 @@ export const typeOptionsMenu = {
 
 export const navigation = [
   {
-    path: PATH_ROOT,
     name: 'Base del conocimiento',
     icon: GiClassicalKnowledge,
     type: typeOptionsMenu.subMenu,
     children: [
       {
-        path: PATH_ROOT,
+        path: PATH_CONVOCATORY,
         type: typeOptionsMenu.item,
         name: 'Convocatorias'
       },
       {
-        path: PATH_ROOT,
+        path: PATH_CATEGORY,
         type: typeOptionsMenu.item,
         name: 'Categorías'
       }
     ]
   },
   {
-    path: PATH_ROOT,
     name: 'Ideación',
     icon: GiLightBulb,
     type: typeOptionsMenu.subMenu,
     children: [
       {
-        path: PATH_ROOT,
+        path: PATH_IDEA,
         type: typeOptionsMenu.item,
         name: 'Ideas'
       }
     ]
   },
   {
-    path: PATH_ROOT,
     name: 'Banco de proyectos',
     icon: PiProjectorScreenChartFill,
     type: typeOptionsMenu.subMenu,
     children: [
       {
-        path: PATH_ROOT,
+        path: PATH_PROJECTS,
         type: typeOptionsMenu.item,
         name: 'Proyectos'
       }
     ]
   },
   {
-    path: PATH_ROOT,
     name: 'Datos Básicos',
     icon: AiFillDatabase,
     type: typeOptionsMenu.subMenu,
     children: [
       {
-        path: PATH_ROOT,
+        path: PATH_THIRD_PARTIES,
         type: typeOptionsMenu.item,
         name: 'Entidad o terceros'
       }
