@@ -14,7 +14,6 @@ export function AuthProvider ({ children }) {
   const login = async ({ email, password }) => {
     dispatch({ type: 'CHECKING' })
     try {
-      console.log(email, password)
       const { data } = await axiosInstance.post(API_LOGIN, {
         email,
         password

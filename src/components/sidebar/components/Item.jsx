@@ -6,7 +6,7 @@ export const Item = ({ path, Icon, name }) => {
     <li>
       <Link
         to={path}
-        className='flex items-center gap-2 text-customDark-main hover:text-customLight-stroke p-2 rounded-lg  hover:bg-customDark-main duration-150'
+        className='flex items-center gap-2 text-customDark-main hover:text-customLight-stroke p-2 rounded-lg  hover:bg-customDark-main'
       >
         <div className='text-customDark-primary text-xl'>
           {
@@ -15,7 +15,7 @@ export const Item = ({ path, Icon, name }) => {
               : null
           }
         </div>
-        <Text className='text-current'>{name}</Text>
+        <Text className='text-current transition-all duration-500 ease-in-out select-none'>{name}</Text>
       </Link>
     </li>
   )

@@ -1,10 +1,10 @@
-import { Button, Divider, Text, Title } from '@tremor/react'
+import { Button, Divider, Title } from '@tremor/react'
 import { MainIcon } from '../Icons/MainIcon'
-import { navFooter } from '../../mocks/sidebar'
 import { Link } from 'react-router-dom'
 import { AiOutlineLeft, AiOutlineRight, AiOutlineMenu } from 'react-icons/ai'
 import { useSidebar } from './hooks/useSidebar'
 import { Menu } from './components/Menu'
+import { Footer } from './components/Footer'
 
 export const Sidebar = () => {
   const {
@@ -34,21 +34,7 @@ export const Sidebar = () => {
           <Divider />
           {/* FOOTER */}
           <ul>
-            {navFooter.map((item, idx) => (
-              <li key={idx}>
-                <Link
-                  to={item.path}
-                  className='flex items-center gap-x-2 text-customDark-main hover:text-customLight-stroke p-2 rounded-lg  hover:bg-gray-50 hover:font-medium duration-150'
-                >
-                  <div className='text-customDark-primary'>{item.icon}</div>
-                  <div>
-                    <Text className='text-current select-none'>
-                      {item.name}
-                    </Text>
-                  </div>
-                </Link>
-              </li>
-            ))}
+            <Footer />
           </ul>
           {
             isMobile && (

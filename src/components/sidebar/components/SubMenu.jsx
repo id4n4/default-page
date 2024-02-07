@@ -22,7 +22,7 @@ export const SubMenu = ({ name, Icon, subOptions }) => {
           }
         </div>
         <div className='flex-grow'>
-          <Text className='text-current select-none'>{name}</Text>
+          <Text className='text-current transition-all duration-150 ease-in-out select-none'>{name}</Text>
         </div>
         <div>
           {

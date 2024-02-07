@@ -20,7 +20,7 @@ export const useSidebar = () => {
     }
     return {
       overflow: 'hidden',
-      width: 'auto',
+      width: '22rem',
       maxWidth: '300px',
       position: 'relative'
     }
