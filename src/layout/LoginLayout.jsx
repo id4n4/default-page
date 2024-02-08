@@ -8,14 +8,13 @@ import { AuthContext } from '../context/authProvider'
 export const LoginLayout = () => {
   const { user, logout } = useContext(AuthContext)
   const modalInfo = useMemo(() => {
-    console.log(user.errorMessage)
     return {
       visible: !!user.errorMessage,
       message: user.errorMessage
     }
   }, [user.errorMessage])
   return (
-    <section className='w-screen h-screen bg-customDark-background flex flex-col justify-center items-center'>
+    <section className='min-w-screen min-h-screen bg-customDark-background flex flex-col md:justify-center items-center p-5'>
 
       <MainIcon />
       <Title className='text-customDark-main'>

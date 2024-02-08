@@ -39,7 +39,7 @@ export function AuthProvider ({ children }) {
       }, 5000)
     }
   }
-  const singUp = async (userData) => {
+  const signUp = async (userData) => {
     dispatch({ type: 'CHECKING' })
     try {
       const { data } = await axiosInstance.post(API_SIGN_UP, userData)
@@ -101,7 +101,7 @@ export function AuthProvider ({ children }) {
         user: state,
         login,
         logout,
-        singUp,
+        signUp,
         checkingCredentials
       }}
     >

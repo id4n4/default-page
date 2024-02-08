@@ -22,7 +22,7 @@ import {
   ThirdParties
 } from '../pages'
 import { Page404 } from '../pages/Page404'
-import { LoginLayout, MainLayout } from '../layout'
+import { LoadingLayout, LoginLayout, MainLayout } from '../layout'
 import { AuthContext } from '../context/authProvider'
 import { useContext, useEffect } from 'react'
 import { PrivateRoute } from './PrivateRoute'
@@ -33,7 +33,7 @@ export const BrowserRoutes = () => {
     checkingCredentials()
   }, [])
   if (user.status === 'checking') {
-    return <h1>Cargando...</h1>
+    return <LoadingLayout />
   }
 
   return (

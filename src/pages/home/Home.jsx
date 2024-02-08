@@ -6,7 +6,7 @@ import { AiOutlineArrowRight } from 'react-icons/ai'
 export const Home = () => {
   const navigate = useNavigate()
   const handleStart = () => {
-    navigate('/login')
+    navigate('/convocatory')
   }
   return (
     <div className='flex flex-col md:justify-center items-center h-full'>
