@@ -1,1 +1,0 @@
-export { Convocatory } from './Convocatory'
