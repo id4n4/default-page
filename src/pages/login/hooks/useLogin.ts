@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { AuthContext } from '@/context/AuthProvider'
-import { type InfoLogin } from '@/Interfaces'
+import { type InfoLogin } from '@/Interfaces/authProvider'
 
 export const useLogin = () => {
   const navigate = useNavigate()

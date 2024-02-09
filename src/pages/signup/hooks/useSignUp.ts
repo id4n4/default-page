@@ -1,8 +1,9 @@
 import { useForm } from 'react-hook-form'
 import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { AuthContext } from '@/context/AuthProvider'
-import { InitialStateSignup, type InfoSignUp } from '@/Interfaces'
+import { type InfoSignUp } from '@/Interfaces/authProvider'
+import { AuthContext } from '../../../context/AuthProvider'
+import { InitialStateSignup } from '@/constants/authConstants'
 
 export const useSignUp = () => {
   const navigate = useNavigate()

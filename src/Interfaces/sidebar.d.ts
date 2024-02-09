@@ -1,9 +1,5 @@
+import { type OptionsMenuType } from '@/constants/authConstants'
 import { type FC } from 'react'
-
-export enum OptionsMenuType {
-  item = 'item',
-  subMenu = 'submenu'
-}
 
 export interface Items {
   path: string

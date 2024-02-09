@@ -1,5 +1,4 @@
-import { rolAdminTornado } from '@/mocks/auth'
-import { type AuthState } from './auth'
+import { type AuthState } from './authInterface'
 
 export interface InfoLogin {
   email: string
@@ -31,16 +30,5 @@ export interface AuthContextType {
   login: (credentials: InfoLogin) => void
   logout: () => void
   signUp: (userData: InfoSignUpBody) => void
-  checkingCredentials
-}
-
-export const InitialStateSignup: InfoSignUp = {
-  nombres: '',
-  apellidos: '',
-  rolId: rolAdminTornado.value,
-  email: '',
-  password: '',
-  confirmPassword: '',
-  nit: Math.random().toString(36).substring(7),
-  terms: false
+  checkingCredentials: () => void
 }

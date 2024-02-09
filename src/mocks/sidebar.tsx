@@ -1,4 +1,4 @@
-import { type Menu, OptionsMenuType } from '@/Interfaces'
+import { type Menu } from '@/Interfaces'
 import {
   PATH_CATEGORY,
   PATH_CONFIG,
@@ -15,6 +15,7 @@ import {
   IoFileTrayFull,
   IoInformationCircleSharp
 } from 'react-icons/io5'
+import { OptionsMenuType } from '@/constants/authConstants'
 
 export const navigation: Menu[] = [
   {

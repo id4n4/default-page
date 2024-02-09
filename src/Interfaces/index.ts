@@ -1,3 +1,3 @@
-export * from './auth'
-export * from './authProvider'
+export * from './authInterface'
 export * from './sidebar'
+export * from './authProvider'

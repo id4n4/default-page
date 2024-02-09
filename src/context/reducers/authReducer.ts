@@ -1,5 +1,5 @@
 import { AUTH_STATUS } from '@/constants/authConstants'
-import { type AuthAction, type AuthState } from '@/Interfaces/auth'
+import { type AuthAction, type AuthState } from '@/Interfaces/authInterface'
 
 export const AuthInitialState: AuthState = {
   status: AUTH_STATUS.checking, // 'authenticated','not-authenticated',
