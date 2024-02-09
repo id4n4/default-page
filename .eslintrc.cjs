@@ -16,9 +16,12 @@ module.exports = {
     "plugins": [
         "react"
     ],
-    "ignorePatterns": ["vite.config.ts", ".eslintrc.cjs"],
+    "ignorePatterns": ["vite.config.ts", ".eslintrc.cjs", 'tailwind.config.js'],
     "rules": {
         '@typescript-eslint/explicit-function-return-type': 'off',
         'react/react-in-jsx-scope': 'off',
+        '@typescript-eslint/no-unsafe-argument': 'off',
+        'react/prop-types': 'off',
+        '@typescript-eslint/no-misused-promises': 'off',
     }
 }
