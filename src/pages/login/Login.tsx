@@ -1,14 +1,21 @@
 import { Button, Card, Divider, Metric, Text, TextInput } from '@tremor/react'
 import { useLogin } from './hooks/useLogin'
 import { Controller } from 'react-hook-form'
+import { motion } from 'framer-motion'
 
 export const Login = () => {
   const { actions, formStates } = useLogin()
   const { onSubmit, handleSignUp } = actions
   const { control, handleSubmit, errors } = formStates
   return (
-    <>
-      <Card className='max-w-[30rem] animate-fade animate-duration-150 animate-ease-in'>
+    <motion.div
+      initial={{ x: -50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: 50, opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className='min-w-[30rem]'
+    >
+      <Card>
         <header>
           <Metric className='text-center uppercase'>Inicio de Sesión</Metric>
         </header>
@@ -29,7 +36,7 @@ export const Login = () => {
                     type='email'
                     value={value}
                     onValueChange={onChange}
-                    error={errors?.email != null}
+                    error={!!errors?.email}
                     errorMessage={errors?.email?.message}
                   />
                 ) }
@@ -46,7 +53,7 @@ export const Login = () => {
                     type='password'
                     value={value}
                     onValueChange={onChange}
-                    error={errors?.password != null}
+                    error={!!errors?.password}
                     errorMessage={errors?.password?.message}
                   />
                 )}
@@ -68,6 +75,6 @@ export const Login = () => {
         </footer>
       </Card>
 
-    </>
+    </motion.div>
   )
 }

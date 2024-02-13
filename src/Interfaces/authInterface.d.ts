@@ -20,3 +20,4 @@ export type AuthAction =
   | { type: AUTH_TYPE_STATE.logout }
   | { type: AUTH_TYPE_STATE.error, payload: string }
   | { type: AUTH_TYPE_STATE.checking }
+  | { type: AUTH_TYPE_STATE.clearError }

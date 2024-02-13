@@ -3,6 +3,8 @@ import {
   PATH_CATEGORY,
   PATH_CONFIG,
   PATH_CONVOCATORY,
+  PATH_CONVOCATORY_CREATE,
+  PATH_CONVOCATORY_EDIT,
   PATH_IDEA,
   PATH_LOGIN,
   PATH_PROJECTS,
@@ -14,6 +16,7 @@ import {
   Category,
   Config,
   Convocatory,
+  EditConvocatory,
   Home,
   Idea,
   Login,
@@ -60,6 +63,8 @@ export const BrowserRoutes = () => {
           <Route path={PATH_CONFIG} element={<Config />} />
           <Route path={PATH_CATEGORY} element={<Category />} />
           <Route path={PATH_CONVOCATORY} element={<Convocatory />} />
+          <Route path={PATH_CONVOCATORY_EDIT + '/:id'} element={<EditConvocatory />} />
+          <Route path={PATH_CONVOCATORY_CREATE } element={<EditConvocatory />} />
           <Route path={PATH_IDEA} element={<Idea />} />
           <Route path={PATH_PROJECTS} element={<Projects />} />
           <Route path={PATH_THIRD_PARTIES} element={<ThirdParties />} />

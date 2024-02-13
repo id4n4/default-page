@@ -89,7 +89,7 @@ export const AuthProvider: FC<Props> = ({ children }) => {
 
   const checkingCredentials = async () => {
     const token: string | null = window.localStorage.getItem('token')
-    if (token !== null) {
+    if (token === null) {
       logout()
       return
     }
@@ -122,6 +122,9 @@ export const AuthProvider: FC<Props> = ({ children }) => {
     window.localStorage.clear()
     dispatch({ type: AUTH_TYPE_STATE.logout })
   }
+  const clearError = () => {
+    dispatch({ type: AUTH_TYPE_STATE.clearError })
+  }
 
   return (
     <AuthContext.Provider
@@ -130,7 +133,8 @@ export const AuthProvider: FC<Props> = ({ children }) => {
         login,
         signUp,
         checkingCredentials,
-        logout
+        logout,
+        clearError
       }}
     >
       {children}

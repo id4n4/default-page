@@ -1,4 +1,4 @@
-import { AUTH_STATUS } from '@/constants/authConstants'
+import { AUTH_STATUS, AUTH_TYPE_STATE } from '@/constants/authConstants'
 import { type AuthAction, type AuthState } from '@/Interfaces/authInterface'
 
 export const AuthInitialState: AuthState = {
@@ -9,32 +9,37 @@ export const AuthInitialState: AuthState = {
 export const authReducer = (state: AuthState, action: AuthAction) => {
   const { type: actionType } = action
   switch (actionType) {
-    case 'LOGIN':
+    case AUTH_TYPE_STATE.login:
       return {
         ...state,
         status: AUTH_STATUS.authenticated,
         info: action.payload,
         errorMessage: undefined
       }
-    case 'LOGOUT':
+    case AUTH_TYPE_STATE.logout:
       return {
         ...state,
         status: AUTH_STATUS.notAuthenticated,
         info: {},
         errorMessage: undefined
       }
-    case 'ERROR':
+    case AUTH_TYPE_STATE.error:
       return {
         ...state,
         status: AUTH_STATUS.notAuthenticated,
         info: {},
         errorMessage: action.payload
       }
-    case 'CHECKING':
+    case AUTH_TYPE_STATE.checking:
       return {
         ...state,
         status: AUTH_STATUS.checking,
         info: {},
+        errorMessage: undefined
+      }
+    case AUTH_TYPE_STATE.clearError:
+      return {
+        ...state,
         errorMessage: undefined
       }
   }

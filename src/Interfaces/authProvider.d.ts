@@ -31,4 +31,5 @@ export interface AuthContextType {
   logout: () => void
   signUp: (userData: InfoSignUpBody) => void
   checkingCredentials: () => void
+  clearError: () => void
 }

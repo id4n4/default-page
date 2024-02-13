@@ -4,6 +4,7 @@ import { IoWarning } from 'react-icons/io5'
 import { useContext, useMemo } from 'react'
 import { AuthContext } from '@/context/AuthProvider'
 import { MainIcon } from '@/components/icons'
+import { AnimatePresence } from 'framer-motion'
 
 export const LoginLayout = () => {
   const context = useContext(AuthContext)
@@ -14,24 +15,21 @@ export const LoginLayout = () => {
     }
   }, [context?.user.errorMessage])
   return (
-    <section className='min-w-screen min-h-screen bg-customDark-background flex flex-col md:justify-center items-center p-5'>
-
+    <section className="min-w-screen min-h-screen bg-customDark-background flex flex-col md:justify-center items-center p-5 overflow-x-hidden">
       <MainIcon />
-      <Title className='text-customDark-main'>
+      <Title className="text-customDark-main">
         Gestor Inteligente de Proyectos
       </Title>
 
       <br />
 
-      <Outlet />
+      <AnimatePresence>
+        <Outlet />
+      </AnimatePresence>
 
-      <Dialog open={modalInfo.visible} onClose={() => context?.logout()}>
+      <Dialog open={modalInfo.visible} onClose={() => context?.clearError()}>
         <DialogPanel>
-          <Callout
-            title='Error'
-            icon={IoWarning}
-            color='rose'
-          >
+          <Callout title="Error" icon={IoWarning} color="rose">
             {modalInfo.message}
           </Callout>
         </DialogPanel>

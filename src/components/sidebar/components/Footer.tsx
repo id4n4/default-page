@@ -28,7 +28,7 @@ export const Footer = () => {
       <li>
         <Button
           icon={IoLogOutOutline}
-          onClick={authContext?.logout}
+          onClick={() => authContext?.logout()}
           variant='light'
           className='w-full text-start px-3 rounded-lg py-2 justify-start hover:bg-gray-50'
         >

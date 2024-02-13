@@ -6,6 +6,8 @@ export const PATH_CONFIG = '/config'
 
 export const PATH_CATEGORY = '/category'
 export const PATH_CONVOCATORY = '/convocatory'
+export const PATH_CONVOCATORY_EDIT = '/convocatory/edit'
+export const PATH_CONVOCATORY_CREATE = '/convocatory/create'
 export const PATH_IDEA = '/idea'
 export const PATH_PROJECTS = '/projects'
 export const PATH_THIRD_PARTIES = '/thirdParties'

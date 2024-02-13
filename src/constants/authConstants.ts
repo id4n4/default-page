@@ -11,7 +11,8 @@ export enum AUTH_TYPE_STATE {
   login = 'LOGIN',
   logout = 'LOGOUT',
   error = 'ERROR',
-  checking = 'CHECKING'
+  checking = 'CHECKING',
+  clearError = 'CLEAR_ERROR'
 }
 
 export enum OptionsMenuType {
