@@ -1,4 +1,4 @@
-import { Button, DateRangePicker, Divider, MultiSelect, MultiSelectItem, TextInput, Title } from '@tremor/react'
+import { Button, DateRangePicker, Divider, MultiSelect, MultiSelectItem, Select, SelectItem, TextInput, Title } from '@tremor/react'
 import { IoAdd, IoSearchOutline } from 'react-icons/io5'
 import { es } from 'date-fns/locale'
 import { useNavigate } from 'react-router-dom'
@@ -28,6 +28,11 @@ export const Header = () => {
             enableSelect={false}
             placeholder="Rango de fecha"
           />
+          <Select placeholder="Estado" enableClear >
+            <SelectItem value="0">Todos</SelectItem>
+            <SelectItem value="1">Activos</SelectItem>
+            <SelectItem value="2">Inactivos</SelectItem>
+          </Select>
           <Button variant="secondary" color="gray" className='self-end'>
             Filtrar
           </Button>
