@@ -1,4 +1,12 @@
-import { Button, Card, DatePicker, Text, TextInput, Textarea, Title } from '@tremor/react'
+import {
+  Button,
+  Card,
+  DatePicker,
+  Text,
+  TextInput,
+  Textarea,
+  Title
+} from '@tremor/react'
 import { IoArrowBackOutline, IoSave } from 'react-icons/io5'
 import { useEditConvocatory } from '../hooks/useEditConvocatory'
 import { Controller } from 'react-hook-form'
@@ -9,20 +17,23 @@ export const EditConvocatory = () => {
   const { handleBack, onSubmit } = handlers
   const { control, handleSubmit, errors } = formStates
   return (
-    <section >
+    <section>
       <Button
         variant="secondary"
         color="gray"
         onClick={handleBack}
         icon={IoArrowBackOutline}
-        className='ml-12 md:ml-0'
+        className="ml-12 md:ml-0"
       >
         Atrás
       </Button>
       <Card className="mt-4 mx-auto max-w-[800px]">
         <Title>{id ? 'Editar' : 'Crear'} Convocatoria</Title>
         <section>
-          <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-3'>
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col gap-3"
+          >
             <div>
               <Text>Nombre:</Text>
               <Controller
@@ -40,7 +51,7 @@ export const EditConvocatory = () => {
                 )}
               />
             </div>
-            <div className='flex flex-col md:flex-row justify-between gap-3'>
+            <div className="flex flex-col md:flex-row justify-between gap-3">
               <div>
                 <Text>Nombre de la entidad</Text>
                 <Controller
@@ -115,7 +126,7 @@ export const EditConvocatory = () => {
                 )}
               />
             </div>
-            <footer className='flex justify-center'>
+            <footer className="flex justify-center">
               <Button icon={IoSave} type="submit">
                 Guardar cambios
               </Button>

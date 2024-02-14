@@ -6,16 +6,17 @@ interface Props {
   isOpen: boolean
   hideModal: () => void
   handleDelete: () => void
+  itemName: string
 }
 
-export const ModalDelete: FC<Props> = ({ isOpen, hideModal, handleDelete }) => {
+export const ModalDelete: FC<Props> = ({ isOpen, hideModal, handleDelete, itemName }) => {
   return (
 
     <Dialog open={isOpen} onClose={hideModal} >
       <DialogPanel className='max-w-sm flex flex-col items-center'>
         <Icon icon={IoTrashBin} color='red' size='xl' className='justify-center'/>
         <p className="mt-2 leading-6 text-tremor-default text-tremor-content dark:text-dark-tremor-content">
-          ¿Estas seguro que deseas eliminar esta convocatoria?
+          ¿Estas seguro que deseas eliminar esta {itemName}?
         </p>
         <div className='mt-2 flex gap-2'>
           <Button onClick={handleDelete} color='red'>

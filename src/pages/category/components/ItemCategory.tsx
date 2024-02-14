@@ -3,7 +3,9 @@ import { StatusBadges } from '@/components/badges'
 import { LiAnimated } from '@/components/listas'
 import { Button, Card, Metric, Switch, Text, Title } from '@tremor/react'
 import { type FC, useState } from 'react'
+import { FaFilePdf } from 'react-icons/fa'
 import { IoPencilSharp, IoRemoveCircle } from 'react-icons/io5'
+import { useNavigate } from 'react-router-dom'
 
 interface Props {
   id: number
@@ -20,9 +22,11 @@ export const ItemCategory: FC<Props> = ({
   entityName,
   active
 }) => {
+  const navigate = useNavigate()
   const [isDeleting, setIsDeleting] = useState(false)
   const handleEdit = () => {
     console.log('edit')
+    navigate(`/category/edit/${id}`)
   }
   const handleChangeState = () => {
     console.log('change state')
@@ -34,15 +38,18 @@ export const ItemCategory: FC<Props> = ({
   return (
     <LiAnimated>
       <Card>
-        <section className="flex flex-col lg:flex-row gap-5">
-          <div className="flex-grow flex flex-col gap-2">
+        <section className="flex flex-col xl:flex-row gap-5 ">
+          <div className="flex flex-col gap-2 flex-grow">
             <Metric>{name}</Metric>
-            <Text>{description}</Text>
+            <p className='text-customLight-paragraph'>{description}</p>
             <StatusBadges isActive={active} />
           </div>
-          <div className="grid grid-cols-2 items-center gap-x-3">
+          <div className="self-center grid grid-cols-2 items-center gap-3 min-w-max">
             <Title>Entidad:</Title>
             <Text>{entityName}</Text>
+            <div className="col-span-2 flex justify-center">
+              <Button variant='light' color='red' icon={FaFilePdf}>Ver Documento</Button>
+            </div>
           </div>
           <div className="flex gap-2 items-center">
             <Button icon={IoPencilSharp} onClick={handleEdit}>
@@ -70,6 +77,7 @@ export const ItemCategory: FC<Props> = ({
             setIsDeleting(false)
           }}
           handleDelete={handleDelete}
+          itemName='categoría'
         />
       </Card>
     </LiAnimated>

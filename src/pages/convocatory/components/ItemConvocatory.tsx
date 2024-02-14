@@ -47,7 +47,7 @@ export const ItemConvocatory: FC<Props> = ({
             <Text>{description}</Text>
             <StatusBadges isActive={active} />
           </div>
-          <div className="grid grid-cols-2 items-center gap-x-3">
+          <div className="self-center grid grid-cols-2 items-center gap-x-3 min-w-max">
             <Title>Entidad:</Title>
             <Text>{entityName}</Text>
             <Title>Fecha de inicio:</Title>
@@ -81,6 +81,7 @@ export const ItemConvocatory: FC<Props> = ({
             setIsDeleting(false)
           }}
           handleDelete={handleDelete}
+          itemName='convocatoria'
         />
       </Card>
     </LiAnimated>

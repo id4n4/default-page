@@ -20,8 +20,7 @@ export const useSidebar = () => {
     }
     return {
       overflow: 'hidden',
-      width: '22rem',
-      maxWidth: '300px',
+      minWidth: '250px',
       position: 'relative'
     }
   }, [context?.isSidebarVisible, isMobile])

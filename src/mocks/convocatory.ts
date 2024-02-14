@@ -2,7 +2,7 @@ export const ConvocatoryData = [
   {
     id: 1,
     title: 'Convocatory 1',
-    description: 'Description 1',
+    description: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     startDate: '2021-01-01',
     finishDate: '2021-01-01',
     entityName: 'Entity 1',
