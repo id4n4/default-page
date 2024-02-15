@@ -5,6 +5,8 @@ export const PATH_SIGN_UP = '/signup'
 export const PATH_CONFIG = '/config'
 
 export const PATH_CATEGORY = '/category'
+export const PATH_CATEGORY_EDIT = '/category/edit'
+export const PATH_CATEGORY_CREATE = '/category/create'
 export const PATH_CONVOCATORY = '/convocatory'
 export const PATH_CONVOCATORY_EDIT = '/convocatory/edit'
 export const PATH_CONVOCATORY_CREATE = '/convocatory/create'

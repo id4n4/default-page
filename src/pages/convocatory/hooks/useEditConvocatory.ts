@@ -23,10 +23,6 @@ export const useEditConvocatory = () => {
   } = useForm({
     defaultValues: initialValues
   })
-
-  const handleBack = () => {
-    navigate(-1)
-  }
   const getDataSource = () => {
     const convocatory = ConvocatoryData.find(
       (convocatory) => convocatory.id === Number(id)
@@ -51,7 +47,6 @@ export const useEditConvocatory = () => {
       errors
     },
     handlers: {
-      handleBack,
       onSubmit
     }
   }

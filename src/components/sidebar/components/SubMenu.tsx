@@ -1,9 +1,9 @@
 import { Text } from '@tremor/react'
 import { Item } from './Item'
 import { type FC, useState } from 'react'
-import { AiOutlineDown, AiOutlineUp } from 'react-icons/ai'
 import { VscDebugBreakpointData } from 'react-icons/vsc'
 import { type Items } from '@/Interfaces'
+import { CollapseIconAnimated } from '@/components/icons/CollapseIconAnimated'
 
 interface Props {
   name: string
@@ -28,11 +28,7 @@ export const SubMenu: FC<Props> = ({ name, Icon, subOptions }) => {
           <Text className='text-current transition-all duration-150 ease-in-out select-none'>{name}</Text>
         </div>
         <div>
-          {
-            isOpen
-              ? <AiOutlineUp />
-              : <AiOutlineDown />
-          }
+          <CollapseIconAnimated isCollapsed={isOpen} />
         </div>
       </div>
       <ul

@@ -13,9 +13,7 @@ export const useSignUp = () => {
     defaultValues: InitialStateSignup
   })
   const onSubmit = async (data: InfoSignUp) => {
-    console.log(data)
     const { confirmPassword, terms, ...rest } = data
-    console.log(rest)
     context?.signUp(rest)
   }
   const handleLogin = () => {

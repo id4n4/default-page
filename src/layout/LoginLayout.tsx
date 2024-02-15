@@ -4,7 +4,6 @@ import { IoWarning } from 'react-icons/io5'
 import { useContext, useMemo } from 'react'
 import { AuthContext } from '@/context/AuthProvider'
 import { MainIcon } from '@/components/icons'
-import { AnimatePresence } from 'framer-motion'
 
 export const LoginLayout = () => {
   const context = useContext(AuthContext)
@@ -22,10 +21,7 @@ export const LoginLayout = () => {
       </Title>
 
       <br />
-
-      <AnimatePresence>
-        <Outlet />
-      </AnimatePresence>
+      <Outlet />
 
       <Dialog open={modalInfo.visible} onClose={() => context?.clearError()}>
         <DialogPanel>

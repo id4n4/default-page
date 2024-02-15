@@ -1,13 +1,17 @@
+import { PATH_CATEGORY_CREATE } from '@/constants/routePaths'
 import { Button, Divider, MultiSelect, MultiSelectItem, Select, SelectItem, TextInput, Title } from '@tremor/react'
 import { IoAdd, IoSearchOutline } from 'react-icons/io5'
+import { useNavigate } from 'react-router-dom'
 
 export const Header = () => {
+  const navigate = useNavigate()
+  const handleAdd = () => { navigate(PATH_CATEGORY_CREATE) }
   return (
     <header>
         <Title className='text-center'>Lista de categorías</Title>
         <div className="mt-4 flex gap-2 flex-col md:flex-row">
           <TextInput icon={IoSearchOutline} placeholder="Buscar convocatoria" />
-          <Button icon={IoAdd} color="indigo">
+          <Button icon={IoAdd} color="indigo" onClick={handleAdd}>
             Agregar convocatoria
           </Button>
         </div>

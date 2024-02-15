@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import {
   PATH_CATEGORY,
+  PATH_CATEGORY_CREATE,
+  PATH_CATEGORY_EDIT,
   PATH_CONFIG,
   PATH_CONVOCATORY,
   PATH_CONVOCATORY_CREATE,
@@ -16,6 +18,7 @@ import {
   Category,
   Config,
   Convocatory,
+  EditCategory,
   EditConvocatory,
   Home,
   Idea,
@@ -30,6 +33,7 @@ import { useContext, useEffect } from 'react'
 import { PrivateRoute } from './PrivateRoute'
 import { PublicRoute } from './PublicRoute'
 import { AuthContext } from '@/context/AuthProvider'
+
 export const BrowserRoutes = () => {
   const context = useContext(AuthContext)
   useEffect(() => {
@@ -40,37 +44,46 @@ export const BrowserRoutes = () => {
   }
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          element={
-            <PublicRoute>
-              <LoginLayout />
-            </PublicRoute>
-          }
-        >
-          <Route path={PATH_LOGIN} element={<Login />} />
-          <Route path={PATH_SIGN_UP} element={<SignUp />} />
-        </Route>
-        <Route
-          element={
-            <PrivateRoute>
-              <MainLayout />
-            </PrivateRoute>
-          }
-        >
-          <Route path={PATH_ROOT} element={<Home />} />
-          <Route path={PATH_CONFIG} element={<Config />} />
-          <Route path={PATH_CATEGORY} element={<Category />} />
-          <Route path={PATH_CONVOCATORY} element={<Convocatory />} />
-          <Route path={PATH_CONVOCATORY_EDIT + '/:id'} element={<EditConvocatory />} />
-          <Route path={PATH_CONVOCATORY_CREATE } element={<EditConvocatory />} />
-          <Route path={PATH_IDEA} element={<Idea />} />
-          <Route path={PATH_PROJECTS} element={<Projects />} />
-          <Route path={PATH_THIRD_PARTIES} element={<ThirdParties />} />
-        </Route>
-        <Route path='*' element={<Page404 />} />
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            element={
+              <PublicRoute>
+                <LoginLayout />
+              </PublicRoute>
+            }
+          >
+            <Route path={PATH_LOGIN} element={<Login />} />
+            <Route path={PATH_SIGN_UP} element={<SignUp />} />
+          </Route>
+          <Route
+            element={
+              <PrivateRoute>
+                <MainLayout />
+              </PrivateRoute>
+            }
+          >
+            <Route path={PATH_ROOT} element={<Home />} />
+
+            <Route path={PATH_CONFIG} element={<Config />} />
+
+            <Route path={PATH_CATEGORY} element={<Category />} />
+            <Route path={PATH_CATEGORY_EDIT + '/:id'} element={<EditCategory />} />
+            <Route path={PATH_CATEGORY_CREATE} element={<EditCategory />} />
+
+            <Route path={PATH_CONVOCATORY} element={<Convocatory />} />
+            <Route path={PATH_CONVOCATORY_EDIT + '/:id'} element={<EditConvocatory />} />
+            <Route path={PATH_CONVOCATORY_CREATE} element={<EditConvocatory />} />
+
+            <Route path={PATH_IDEA} element={<Idea />} />
+
+            <Route path={PATH_PROJECTS} element={<Projects />} />
+
+            <Route path={PATH_THIRD_PARTIES} element={<ThirdParties />} />
+
+          </Route>
+          <Route path="*" element={<Page404 />} />
+        </Routes>
+      </BrowserRouter>
   )
 }

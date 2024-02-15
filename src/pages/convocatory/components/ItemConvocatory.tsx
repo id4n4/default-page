@@ -47,32 +47,34 @@ export const ItemConvocatory: FC<Props> = ({
             <Text>{description}</Text>
             <StatusBadges isActive={active} />
           </div>
-          <div className="self-center grid grid-cols-2 items-center gap-x-3 min-w-max">
-            <Title>Entidad:</Title>
-            <Text>{entityName}</Text>
-            <Title>Fecha de inicio:</Title>
-            <Text>{startDate}</Text>
-            <Title>Fecha de fin:</Title>
-            <Text>{finishDate}</Text>
-          </div>
-          <div className="flex gap-2 items-center">
-            <Button icon={IoPencilSharp} onClick={handleEdit}>
-              Editar
-            </Button>
-            <Button
-              icon={IoRemoveCircle}
-              color="slate"
-              onClick={() => {
-                setIsDeleting(true)
-              }}
-            >
-              Eliminar
-            </Button>
-            <Switch
-              checked={active}
-              onChange={handleChangeState}
-              tooltip={active ? 'Desactivar' : 'Activar'}
-            />
+          <div className='flex flex-col items-start justify-center xl:items-center xl:flex-row gap-2'>
+            <div className="grid grid-cols-2 items-center gap-x-3 min-w-max">
+              <Title>Entidad:</Title>
+              <Text>{entityName}</Text>
+              <Title>Fecha de inicio:</Title>
+              <Text>{startDate}</Text>
+              <Title>Fecha de fin:</Title>
+              <Text>{finishDate}</Text>
+            </div>
+            <div className="flex gap-2 items-center">
+              <Button icon={IoPencilSharp} onClick={handleEdit}>
+                Editar
+              </Button>
+              <Button
+                icon={IoRemoveCircle}
+                color="slate"
+                onClick={() => {
+                  setIsDeleting(true)
+                }}
+              >
+                Eliminar
+              </Button>
+              <Switch
+                checked={active}
+                onChange={handleChangeState}
+                tooltip={active ? 'Desactivar' : 'Activar'}
+              />
+            </div>
           </div>
         </section>
         <ModalDelete
@@ -81,7 +83,7 @@ export const ItemConvocatory: FC<Props> = ({
             setIsDeleting(false)
           }}
           handleDelete={handleDelete}
-          itemName='convocatoria'
+          itemName="convocatoria"
         />
       </Card>
     </LiAnimated>

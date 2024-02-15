@@ -1,6 +1,7 @@
 import { ModalDelete } from '@/components/Modal'
 import { StatusBadges } from '@/components/badges'
 import { LiAnimated } from '@/components/listas'
+import { PATH_CATEGORY_EDIT } from '@/constants/routePaths'
 import { Button, Card, Metric, Switch, Text, Title } from '@tremor/react'
 import { type FC, useState } from 'react'
 import { FaFilePdf } from 'react-icons/fa'
@@ -25,8 +26,7 @@ export const ItemCategory: FC<Props> = ({
   const navigate = useNavigate()
   const [isDeleting, setIsDeleting] = useState(false)
   const handleEdit = () => {
-    console.log('edit')
-    navigate(`/category/edit/${id}`)
+    navigate(`${PATH_CATEGORY_EDIT}/${id}`)
   }
   const handleChangeState = () => {
     console.log('change state')
@@ -38,13 +38,14 @@ export const ItemCategory: FC<Props> = ({
   return (
     <LiAnimated>
       <Card>
-        <section className="flex flex-col xl:flex-row gap-5 ">
+        <section className="flex flex-col lg:flex-row gap-5 ">
           <div className="flex flex-col gap-2 flex-grow">
             <Metric>{name}</Metric>
             <p className='text-customLight-paragraph'>{description}</p>
             <StatusBadges isActive={active} />
           </div>
-          <div className="self-center grid grid-cols-2 items-center gap-3 min-w-max">
+          <div className='flex flex-col items-start justify-center xl:items-center xl:flex-row gap-3'>
+          <div className="grid grid-cols-2 items-center gap-3 min-w-max">
             <Title>Entidad:</Title>
             <Text>{entityName}</Text>
             <div className="col-span-2 flex justify-center">
@@ -69,6 +70,8 @@ export const ItemCategory: FC<Props> = ({
               onChange={handleChangeState}
               tooltip={active ? 'Desactivar' : 'Activar'}
             />
+          </div>
+
           </div>
         </section>
         <ModalDelete

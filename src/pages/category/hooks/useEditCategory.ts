@@ -22,10 +22,6 @@ export const useEditCategory = () => {
   } = useForm({
     defaultValues: initialValues
   })
-
-  const handleBack = () => {
-    navigate(-1)
-  }
   const getDataSource = () => {
     const categoryInfo = categoryData.find(
       (category) => category.id === Number(id)
@@ -50,7 +46,6 @@ export const useEditCategory = () => {
       errors
     },
     handlers: {
-      handleBack,
       onSubmit
     }
   }

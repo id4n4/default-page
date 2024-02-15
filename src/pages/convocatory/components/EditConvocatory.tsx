@@ -7,26 +7,20 @@ import {
   Textarea,
   Title
 } from '@tremor/react'
-import { IoArrowBackOutline, IoSave } from 'react-icons/io5'
+import { IoSave } from 'react-icons/io5'
 import { useEditConvocatory } from '../hooks/useEditConvocatory'
 import { Controller } from 'react-hook-form'
 import { es } from 'date-fns/locale'
+import { ButtonBack } from '@/components/buttons'
+import { ViewLayout } from '@/layout'
 
 export const EditConvocatory = () => {
   const { handlers, formStates, id } = useEditConvocatory()
-  const { handleBack, onSubmit } = handlers
+  const { onSubmit } = handlers
   const { control, handleSubmit, errors } = formStates
   return (
-    <section>
-      <Button
-        variant="secondary"
-        color="gray"
-        onClick={handleBack}
-        icon={IoArrowBackOutline}
-        className="ml-12 md:ml-0"
-      >
-        Atrás
-      </Button>
+    <ViewLayout>
+      <ButtonBack />
       <Card className="mt-4 mx-auto max-w-[800px]">
         <Title>{id ? 'Editar' : 'Crear'} Convocatoria</Title>
         <section>
@@ -134,6 +128,6 @@ export const EditConvocatory = () => {
           </form>
         </section>
       </Card>
-    </section>
+    </ViewLayout>
   )
 }
