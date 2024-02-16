@@ -18,7 +18,7 @@ export const Item: FC<Props> = ({ path, Icon, name }) => {
         <div className='text-customDark-primary text-xl'>
           <Icon />
         </div>
-        <Text className='text-current transition-all duration-500 ease-in-out select-none'>{name}</Text>
+        <Text className='text-current select-none'>{name}</Text>
       </Link>
     </li>
   )
