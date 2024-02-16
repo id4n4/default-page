@@ -1,5 +1,9 @@
+import { Header } from './components/Header'
+
 export const Projects = () => {
   return (
-    <div>Projects</div>
+    <section>
+      <Header />
+    </section>
   )
 }
